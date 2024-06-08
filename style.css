@@ -119,11 +119,32 @@ main {
 }
 
 .socials a {
+  display: flex;
+  gap: 5px;
   color: #000;
 }
 
 .socials a:hover, .introduction b:hover {
   color: #00A8A2;
+}
+
+.mail-icon {
+  background: url('assets/email-icon.svg') no-repeat;
+}
+
+.linkedin-icon {
+  background: url('assets/linkedin-icon.svg') no-repeat;
+}
+
+.github-icon {
+  background: url('assets/github-icon.svg') no-repeat;
+}
+
+.icon {
+  display: inline-block;
+  background-size: 20px;
+  width: 20px;
+  height: 20px;
 }
 
 .right h3 {
