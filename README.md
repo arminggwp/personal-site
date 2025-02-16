@@ -1,9 +1,11 @@
 # My personal / portfolio website
 
-<img width="1512" alt="screenshot of website" src="https://github.com/arminggwp/personal-site/assets/59449014/c9d973aa-af50-48e0-ac6a-7bd6bc1dd74e">
+<img width="1512" alt="Screenshot 2025-02-16 at 15 56 35" src="https://github.com/user-attachments/assets/6a43cd7c-1161-416d-b587-1075e0de65ec" />
 
-First version of my personal website. I had a lot of trouble coming up with any kind of design that I would like.
-Nothing too fancy at the moment, coded over a short weekend.
+My current portfolio website. Minimalistic design. Responsive.
+Used semantic HTML elements and only necessary CSS to achieve what I had in mind.
+
+Javascript used for the typewriter effect, as well as to detect user-preffered color scheme.
 
 Built with: 
 - HTML
