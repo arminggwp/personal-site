@@ -317,7 +317,7 @@ body, .toggle, .toggle:before {
   .card-content {
     margin-left: unset;
   }
-  .role {
+  .card-content .card-description, .role {
     padding-left: 30px;
   }
   .role[connector]:before {
