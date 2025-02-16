@@ -11,7 +11,7 @@
   <meta name="application-name" content="Armin Krndzija Portfolio">
   <meta property="og:url" content="https://armin.gg">
   <title>Armin Krndzija | Developer</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" media="none" onload="if(media!='all')media='all'">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
@@ -25,10 +25,10 @@
 </head>
 <body>
   <header>
-    <label for="color-toggle" class="color-toggle">
+    <label for="color-toggle" class="color-toggle" aria-label="Switch website color theme">
       <input type="checkbox" id="color-toggle" onchange="switchTheme(event)">
       <span class="toggle"></span>
-    </label>    
+    </label>
   </header>
 
   <main>
@@ -166,6 +166,6 @@
   <footer>
     <span>Made with caveman tools by Armin Krndzija © 2025</span>
   </footer>
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
