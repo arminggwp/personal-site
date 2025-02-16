@@ -317,4 +317,13 @@ body, .toggle, .toggle:before {
   .card-content {
     margin-left: unset;
   }
+  .role {
+    padding-left: 30px;
+  }
+  .role[connector]:before {
+    content: '○';
+    font-size: 20px;
+    position: absolute;
+    transform: translate(-35px, -0.1em);
+  }
 }
