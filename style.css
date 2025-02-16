@@ -6,7 +6,7 @@
   --bg-color: #f8f9fa;
   --hover-accent-color: #000;
   --invert: 0;
-  font-family: "Source Sans 3", sans-serif;
+  font-family: "Source Sans 3", "Segoe UI", Roboto, Arial, sans-serif;
   font-weight: 300;
   font-style: normal;
 }
@@ -296,6 +296,14 @@ body, .toggle, .toggle:before {
 
   section.right {
     margin-left: unset;
+  }
+
+  .section-content {
+    min-height: 200px; /* Adjust based on content size */
+  }
+
+  .section-content p {
+    font-size: 1rem;
   }
 
   .right .container {
