@@ -2,75 +2,71 @@
 
 :root {
   overscroll-behavior: none;
+  --font-color: #585858;
+  --bg-color: #f8f9fa;
+  --hover-accent-color: #000;
+  --invert: 0;
+  font-family: "Source Sans 3", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+[data-theme="dark"] {
+  --font-color: #f8f9fa;
+  --bg-color: #131313;
+  --hover-accent-color: #fff;
+  --invert: 1;
 }
 
 html, body {
   height: 100%;
 }
 
-body, .socials ul, .experience ul, .experience li {
-  margin: 0px;
-  padding: 0px;
-}
-
-body {
-  background-color: #f8f9fa;
-  color: #585858;
-  display: flex;
-  flex-direction: column;
-  font-family: "Source Sans 3", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 300;
-  font-style: normal;
-  -webkit-transition: background-color 400ms linear;
-  -ms-transition: background-color 400ms linear;
-  transition: background-color 400ms linear;
-}
-
 header, footer {
   height: 60px;
-  position: fixed;
   width: 100%;
   z-index: 2;
 }
 
-header {
-  display: flex;
-  flex-direction: row;
-  justify-content: end;
-  align-items: end;
-}
-
-main {
-  height: 100%;
-  display: grid;
-  grid-template-columns: 10% 40% 40% 10%;
-  grid-template-rows: 1fr;
-}
-
-.left {
-  grid-column: 2 / 3;
-  grid-row: 1 / 1;
-}
-
-.right {
-  grid-column: 3 / 4;
-  grid-row: 1 / 1;
-}
-
-.intro, .details {
-  padding: 80px 0px 80px 40px;
-}
-
-.intro {
+header, .left {
   position: fixed;
 }
 
-.introduction p, .introduction h1 {
-  margin-bottom: 0px;
+header {
+  text-align: end;
+  padding-top: 25px
 }
 
-.introduction p {
+body, ul, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--font-color);
+}
+
+h1, h2, h3, .section-content {
+  cursor: default;
+}
+
+section {
+  padding-top: 80px;
+  width: 50%;
+}
+
+.left {
+  display: flex;
+  justify-content: center;
+}
+
+.introduction p, .introduction h1 {
+  margin: 0px;
+}
+
+.introduction p:first-of-type {
   font-size: 20px;
 }
 
@@ -80,7 +76,7 @@ main {
 }
 
 .introduction h1 strong {
-  color: #000;
+  color: var(--font-color);
 }
 
 .introduction h1 strong:before {
@@ -103,7 +99,7 @@ main {
 }
 
 .introduction b {
-  color: #585858;
+  color: var(--font-color);
   text-decoration: underline;
   font-weight: 400;
   text-decoration-color: #00A8A2;
@@ -113,19 +109,22 @@ main {
   margin-top: 30px;
 }
 
-.socials ul li {
-  list-style-type: none;
+.socials li {
   margin-top: 15px;
 }
 
 .socials a {
   display: flex;
   gap: 5px;
-  color: #000;
 }
 
-.socials a:hover, .introduction b:hover {
+a {
+  color: var(--font-color);
+}
+
+a:hover, b:hover {
   color: #00A8A2;
+  cursor: pointer;
 }
 
 .mail-icon {
@@ -145,68 +144,86 @@ main {
   background-size: 20px;
   width: 20px;
   height: 20px;
+  filter: invert(var(--invert));
 }
 
-.right h3 {
-  margin: 0px;
+.right {
+  margin-left: auto;
 }
 
-.details > div {
+.right .container {
+  padding-right: 25%;
+}
+
+.section-content {
+  margin-bottom: 30px;
+}
+
+.external:after {
+  content: '⧉';
+  transform: rotate(90deg);
+  margin-left: 5px;
+  transition: 400ms;
+  position: absolute;
+}
+
+.external:hover:after{
+  margin-left: 10px;
+  color: #00A8A2;
+}
+
+.card-item {
   padding: 20px;
   border: 1px solid transparent;
   border-radius: 20px;
   transition : border 150ms linear;
 }
-
-.details > div:hover {
+.card-item:hover {
   border-color: #bebebe;
-  color: #000;
+  color: var(--font-color);
 }
 
-.about > div {
-  margin-top: 10px;
+.card-item:hover .role {
+  color: var(--hover-accent-color);
 }
 
-.experience ul li {
-  display: grid;
-  grid-template-rows: auto auto 3fr;
-  grid-template-columns: 1fr 3fr;
-  margin-bottom: 20px;
-  column-gap: 5px;
+.card-header {
+  display: flex;
 }
 
-.experience ul li p {
-  margin-bottom: 0px;
+.card-header .date {
+  width: 110px;
 }
 
-.date {
-  grid-column: 1 / 1;
-  grid-row: 1 / 1;
+.card-header p {
+  margin-top: 0px;
 }
 
-.company {
-  grid-column: 2 / 3;
-  grid-row: 1 / 1;
-  font-weight: 500;
+.card-content {
+  margin-left: 50px;
 }
 
-.company a {
-  color: #585858;
-  text-decoration: none;
+.card-content .card-description, .role {
+  padding-left: 60px;
 }
 
 .role {
-  grid-column: 2 / 3;
-  grid-row: 2 / 3;
+  font-weight: 400;
 }
 
-.job-description {
-  grid-column: 2 / 3;
-  grid-row: 3 / 4;
+.role[connector]:before {
+  content: '○';
+  font-size: 20px;
+  position: absolute;
+  transform: translate(-65px, -0.1em);
 }
 
-footer {
-  bottom: 0px;
+[connected] {
+  border-left: 0.5px solid var(--font-color);
+}
+
+.card-description {
+  font-size: 14px
 }
 
 .color-toggle {
@@ -232,8 +249,6 @@ footer {
   bottom: 0;
   border-radius: 34px;
   background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
-  -webkit-transition: 400ms;
-  transition: 400ms;
 }
 
 .toggle:before {
@@ -245,8 +260,6 @@ footer {
   bottom: 4px;
   border-radius: 50%;
   background-color: #f8f9fa;
-  -webkit-transition: .4s;
-  transition: .4s;
 }
 
 input:checked + .toggle:before {
@@ -256,51 +269,38 @@ input:checked + .toggle:before {
   background-color: #131313;
 }
 
-.dark {
-  background-color: #131313;
+footer {
+  text-align: center;
 }
 
-.dark, .dark a, .dark .introduction b {
-  color: #b8b8b8;
+footer span {
+  position: relative;
+  bottom: -25px;
+  font-size: 14px;
 }
 
-.dark .introduction h1 strong, .dark .details > div:hover {
-  color: #f8f9fa;
-}
-
-.dark .introduction h1 strong:before {
-  background: linear-gradient(90deg, rgba(148,187,233,1) 0%, rgba(238,174,202,1) 60%, rgba(148,187,233,0) 90%);
-}
-
-.dark .introduction b:hover {
-  color: #00A8A2;
-}
-
-.dark .icon {
-  filter: invert(1);
-}
-
-@media screen and (max-width: 900px) {
-  .intro {
-    padding: 50px 50px 0px 50px;
-  }
-  .details {
-    padding: 40px;
-  }
+body, .toggle, .toggle:before {
+  -webkit-transition: 400ms;
+  transition: 400ms;
 }
 
 @media screen and (max-width: 830px) {
+  section {
+    width: 80%;
+  }
+
+  section.left {
+    position: relative;
+    display: block;
+  }
+
+  section.right {
+    margin-left: unset;
+  }
+
   main {
     display: flex;
     flex-direction: column;
-  }
-  .intro {
-    position: relative;
-  }
-  .intro {
-    padding: 60px 60px 0px 60px;
-  }
-  .details {
-    padding: 40px;
+    align-items: center;
   }
 }

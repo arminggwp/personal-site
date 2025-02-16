@@ -1,4 +1,4 @@
-const texts = ['Shopify Developer', 'Support Developer', 'Front-End Developer'];
+const texts = ['Shopify Developer', 'Lead Support Engineer', 'Front-End Developer'];
 var textIndex = 0;
 
 function typewriter() {
@@ -38,9 +38,12 @@ setTimeout(() => {
   typewriter();
 }, 2500);
 
-(function toggleColors() {
-  var toggle = document.querySelector('.color-toggle input');
-  toggle.addEventListener('change', function() {
-    document.body.classList.toggle('dark');
-  })
-})();
+function switchTheme(event) {
+  const theme = event.target.checked ? "dark" : "light";
+  localStorage.setItem("theme", theme);
+  document.documentElement.setAttribute("data-theme", theme);
+}
+
+if (document.documentElement.getAttribute("data-theme") == "dark"){
+    document.getElementById('color-toggle').checked = true;
+}

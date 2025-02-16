@@ -3,29 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Armin Krndzija</title>
+  <meta name="description" content="Armin Krndzija | Front-End Developer specializing in HTML, CSS, JavaScript, and Shopify development. Passionate about coding, problem-solving, and web optimization.">
+  <meta property="og:title" content="Armin Krndzija – Front-End Developer">
+  <meta property="og:description" content="Front-End Developer specializing in HTML, CSS, JavaScript, and Shopify development.">
+  <meta name="author" content="Armin Krndzija">
+  <meta name="copyright" content="© 2025 Armin Krndzija">
+  <meta name="application-name" content="Armin Krndzija Portfolio">
+  <meta property="og:url" content="https://armin.gg">
+  <title>Armin Krndzija | Developer</title>
   <link rel="stylesheet" href="style.css">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
   <link rel="manifest" href="assets/site.webmanifest">
+  <script>
+    (function detectColorScheme() {
+      let theme = localStorage.getItem("theme") || (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
 </head>
 <body>
   <header>
-    <label class="color-toggle">
-      <input type="checkbox">
+    <label for="color-toggle" class="color-toggle">
+      <input type="checkbox" id="color-toggle" onchange="switchTheme(event)">
       <span class="toggle"></span>
-    </label>
+    </label>    
   </header>
+
   <main>
-    <div class="left">
-      <section class="intro">
+    <section class="left">
+      <div class="container">
         <div class="introduction">
           <p>Hey there, I'm</p>
           <h1><strong>Armin</strong>.</h1>
           <h2>Front-End Developer</h2>
-          Coding, making things, fixing things.
-          <br>Currently happy at <a href="https://www.hulkapps.com/" target="_blank"><b>HulkApps</b></a> / <a href="https://shopcircle.co/" target="_blank"><b>Shop Circle</b></a>.
+          <p>Coding, making things, fixing things.</p>
+          <p>
+            Currently happy at 
+            <a href="https://www.hulkapps.com/" target="_blank"><b>HulkApps</b></a> / 
+            <a href="https://shopcircle.co/" target="_blank"><b>Shop Circle</b></a>.
+          </p>
         </div>
         <div class="socials">
           <p>Contact me:</p>
@@ -50,72 +68,104 @@
             </li>
           </ul>
         </div>
-      </section>
-    </div> 
-    <div class="right">
-      <section class="details">
-        <div class="about">
+      </div>
+    </section> 
+    <section class="right">
+      <div class="container">
+        <div class="section-content">
           <h3>About Me</h3>
-          <div>
-            Junior Web Developer with expertise in front-end and Shopify development, proficient in HTML, CSS, JavaScript, and Liquid.<br>
+          <p>
+            Web Developer with expertise in front-end and Shopify development, proficient in HTML, CSS, JavaScript, and Liquid.<br>
             <br>Experienced customer service professional, fluent in three languages, bringing strong communication skills to technical roles.<br>
             <br>Driven by a passion for technology, I am a self-taught coder dedicated to building websites and exploring software development in my free time.
-          </div>
+          </p>
         </div>
-        <div class="experience">
+        <div class="section-content">
           <h3>Experience</h3>
           <ul>
-            <li>
-              <p class="date">2023 - present</p>
-              <p class="company">
-                <a href="https://www.hulkapps.com/" target="_blank">HulkApps</a> / <a href="https://shopcircle.co/" target="_blank">Shop Circle</a>
-              </p>
-              <p class="role">
-                Support Developer
-              </p>
-              <p class="job-description">
-                Install, configure and customize in-house built Shopify Apps for merchants across the world.<br>
-                Ensuring smooth integration of apps into merchants' storefront designs through custom code solutions and features.
-              </p>
+            <li class="card-item">
+              <div>
+                <div class="card-header">
+                  <p class="date">2023 - present</p>
+                  <p class="company">
+                    <a href="https://www.hulkapps.com/" target="_blank">HulkApps</a> / <a href="https://shopcircle.co/" target="_blank">Shop Circle</a>
+                  </p>
+                </div>
+                <div class="card-content">
+                  <p class="role" connector>
+                    <em>Lead Support Engineer</em>
+                  </p>
+                  <p class="card-description" connected>
+                    Handle app integrations with the integration team and resolve complex merchant support issues with custom solutions.
+                    Develop fixes and new app features based on feedback, documenting everything in JIRA and Slack. 
+                    Assist with QA testing, debug theme and third-party app conflicts, and research new app integrations. 
+                    Respond to customer support requests, investigate reported issues, and help onboard and mentor new team members.
+                  </p>
+                </div>
+                <div class="card-content">
+                  <p class="role" connector>
+                    <em>Support Developer</em>
+                  </p>
+                  <p class="card-description">
+                    Install, configure and customize in-house built Shopify Apps for merchants across the world.<br>
+                    Ensuring smooth integration of apps into merchants' storefront designs through custom code solutions and features.
+                  </p>
+                </div>
+              </div>
             </li>
-            <li>
-              <p class="date">2022 - 2023</p>
-              <p class="role">
-                Technical Support Agent (B2B)
-              </p>
-              <p class="company">
-                <a href="https://webhelp-bih.com/" target="_blank">Webhelp BH</a>
-              </p>
-              <p class="job-description">
-                Providing technical support to users of Epson products such as printers, POS devices, scanners and projectors.
-                Troubleshooting technical issues for Epson B2B end customers via telephone and email.
-                Presales support, providing product information.
-                Sales support and service arrangements for in-warranty or out-of-warranty products.
-              </p>
+            <li class="card-item">
+              <div>
+                <div class="card-header">
+                  <p class="date">2022 - 2023</p>
+                  <p class="company">
+                    <a href="https://webhelp-bih.com/" target="_blank">Webhelp BH</a>
+                  </p>
+                </div>
+                <div class="card-content">
+                  <p class="role">
+                    <em>Technical Support Agent (B2B)</em>
+                  </p>
+                  <p class="card-description">
+                    Providing technical support to users of Epson products such as printers, POS devices, scanners and projectors.
+                    Troubleshooting technical issues for Epson B2B end customers via telephone and email.
+                    Presales support, providing product information.
+                    Sales support and service arrangements for in-warranty or out-of-warranty products.
+                  </p>
+                </div>
+              </div>
             </li>
-            <li>
-              <p class="date">2021 - 2022</p>
-              <p class="role">
-                Customer Support Agent
-              </p>
-              <p class="company">
-                <a href="https://mplusgroup.eu/bosna-i-hercegovina" target="_blank">M+ BH</a>
-              </p>
-              <p class="job-description">
-                User support via e-mail, sms and inbound/outbound calls.
-                Receiving appointments, appointment control, complaints, new user applications & data management.
-                Identification and recruitment of newcomers to the platform.
-              </p>
+            <li class="card-item">
+              <div>
+                <div class="card-header">
+                  <p class="date">2021 - 2022</p>
+                  <p class="company">
+                    <a href="https://mplusgroup.eu/bosna-i-hercegovina" target="_blank">M+ BH</a>
+                  </p>
+                </div>
+                <div class="card-content">
+                  <p class="role">
+                  <em>Customer Support Agent</em>
+                  </p>
+                  <p class="card-description">
+                    User support via e-mail, sms and inbound/outbound calls.
+                    Receiving appointments, appointment control, complaints, new user applications & data management.
+                    Identification and recruitment of newcomers to the platform.
+                  </p>
+                </div>
+              </div>
             </li>
           </ul>
+          <p><a class="external" href="/resume.pdf" target="_blank">View full resume</a></p>
         </div>
-        <div class="projects">
+        <div class="section-content">
           <h3>Projects (soon)</h3>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   </main>
-  <footer></footer>
+  <footer>
+    <span>Made with caveman tools by Armin Krndzija © 2025</span>
+  </footer>
   <script src="script.js"></script>
 </body>
 </html>
